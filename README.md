@@ -8,8 +8,6 @@ I'm a **Python Developer** and student from Warsaw 🇵🇱, passionate about cr
 ### Backend
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)
-![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 ![SQLite](https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white)
 
 ### Frontend
@@ -20,9 +18,8 @@ I'm a **Python Developer** and student from Warsaw 🇵🇱, passionate about cr
 ### Tools & Technologies
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+![macOS](https://img.shields.io/badge/macOS-000000?style=for-the-badge&logo=apple&logoColor=white)
 ![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 
 ## 🎓 Education
 📚 Computer Science student in Warsaw, constantly developing my programming skills
@@ -39,7 +36,6 @@ I'm a **Python Developer** and student from Warsaw 🇵🇱, passionate about cr
 
 ## 🤝 Connect with Me
 - 💬 **Telegram**: @Th3ryks
-- 📧 **Email**: th3ryks@example.com
 - 🌐 **Portfolio**: [My Website](https://th3ryks.github.io)
 
 ---
