@@ -36,7 +36,7 @@ I'm a **Python Developer** and student from Warsaw 🇵🇱, passionate about cr
 
 ## 🤝 Connect with Me
 - 💬 **Telegram**: @Th3ryks
-- 🌐 **Portfolio**: [My Website](https://th3ryks.github.io)
+- 🌐 **Portfolio**: [My Website](https://th3ryks.dev)
 
 ---
 ⭐ **"Code is poetry in motion"** ⭐
