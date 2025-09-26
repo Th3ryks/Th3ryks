@@ -69,32 +69,7 @@ body::before {
     }
 }
 
-/* Music toggle button */
-#music-toggle {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    width: 50px;
-    height: 50px;
-    background: rgba(0, 212, 255, 0.1);
-    border: 1px solid rgba(0, 212, 255, 0.3);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-size: 20px;
-    z-index: 1000;
-    opacity: 0.6;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
-}
-
-#music-toggle:hover {
-    opacity: 1;
-    transform: scale(1.1);
-    box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
-}
+/* Music toggle button - REMOVED */
 
 /* Easter egg animations */
 @keyframes rainbow {
@@ -472,13 +447,13 @@ body::before {
 }
 
 .glass-button:hover {
-    transform: translateY(-5px) scale(1.05);
-    background: rgba(255, 255, 255, 0.15);
-    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-3px) scale(1.02);
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.25);
     box-shadow: 
-        0 15px 35px rgba(0, 0, 0, 0.4),
-        0 0 30px rgba(255, 255, 255, 0.15),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        0 10px 25px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(255, 255, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .glass-button:active {
@@ -489,30 +464,30 @@ body::before {
 /* Enhanced hover effects for specific buttons */
 #github-btn:hover {
     box-shadow: 
-        0 15px 35px rgba(0, 0, 0, 0.4),
-        0 0 30px rgba(138, 43, 226, 0.3);
-    border-color: rgba(138, 43, 226, 0.5);
+        0 10px 25px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(138, 43, 226, 0.2);
+    border-color: rgba(138, 43, 226, 0.3);
 }
 
 #telegram-btn:hover {
     box-shadow: 
-        0 15px 35px rgba(0, 0, 0, 0.4),
-        0 0 30px rgba(0, 136, 204, 0.4);
-    border-color: rgba(0, 136, 204, 0.6);
+        0 10px 25px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(0, 136, 204, 0.25);
+    border-color: rgba(0, 136, 204, 0.4);
 }
 
 #twitter-btn:hover {
     box-shadow: 
-        0 15px 35px rgba(0, 0, 0, 0.4),
-        0 0 30px rgba(29, 161, 242, 0.4);
-    border-color: rgba(29, 161, 242, 0.6);
+        0 10px 25px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(29, 161, 242, 0.25);
+    border-color: rgba(29, 161, 242, 0.4);
 }
 
 .donation-btn:hover {
     box-shadow: 
-        0 15px 35px rgba(0, 0, 0, 0.4),
-        0 0 30px rgba(0, 212, 255, 0.4);
-    border-color: rgba(0, 212, 255, 0.6);
+        0 10px 25px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(0, 212, 255, 0.25);
+    border-color: rgba(0, 212, 255, 0.4);
 }
 
 .glass-button:active {

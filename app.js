@@ -121,84 +121,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Button pulse effect on hover
-    document.querySelectorAll('.glass-button').forEach(button => {
-        button.addEventListener('mouseenter', function() {
-            this.style.animation = 'pulse 0.6s ease-in-out';
-        });
-        
-        button.addEventListener('mouseleave', function() {
-            this.style.animation = '';
-        });
-    });
-
-    /* --- BACKGROUND MUSIC --- */
-    let backgroundMusic = null;
-    let isMusicPlaying = false;
-
-    // Create music toggle button
-    function createMusicToggle() {
-        const musicToggle = document.createElement('div');
-        musicToggle.id = 'music-toggle';
-        musicToggle.innerHTML = '🎵';
-        musicToggle.title = 'Toggle Background Music';
-        musicToggle.style.cssText = `
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            width: 50px;
-            height: 50px;
-            background: rgba(0, 212, 255, 0.1);
-            border: 1px solid rgba(0, 212, 255, 0.3);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-size: 20px;
-            z-index: 1000;
-            opacity: 0.6;
-            transition: all 0.3s ease;
-        `;
-        document.body.appendChild(musicToggle);
-        
-        musicToggle.addEventListener('click', toggleMusic);
-        musicToggle.addEventListener('mouseenter', function() {
-            this.style.opacity = '1';
-            this.style.transform = 'scale(1.1)';
-        });
-        musicToggle.addEventListener('mouseleave', function() {
-            this.style.opacity = isMusicPlaying ? '1' : '0.6';
-            this.style.transform = 'scale(1)';
-        });
-    }
-
-    function toggleMusic() {
-        const toggle = document.getElementById('music-toggle');
-        
-        if (!backgroundMusic) {
-            // Create audio element with a placeholder URL (would need actual audio file)
-            backgroundMusic = new Audio();
-            backgroundMusic.loop = true;
-            backgroundMusic.volume = 0.3;
-        }
-        
-        if (isMusicPlaying) {
-            backgroundMusic.pause();
-            toggle.innerHTML = '🎵';
-            toggle.style.opacity = '0.6';
-            isMusicPlaying = false;
-        } else {
-            backgroundMusic.play().catch(e => {
-                console.log('Audio playback failed:', e);
-                showNotification('Audio not available');
-            });
-            toggle.innerHTML = '🔊';
-            toggle.style.opacity = '1';
-            isMusicPlaying = true;
-        }
-    }
-
     /* --- EASTER EGGS --- */
     let konamiCode = [];
     const konamiSequence = [
@@ -291,9 +213,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 500);
         }, 3000);
     }
-
-    // Initialize music toggle
-    createMusicToggle();
 
     // Disable text selection with mouse
     document.onselectstart = function() {
@@ -587,6 +506,5 @@ document.addEventListener('DOMContentLoaded', function() {
     console.clear();
     console.log('%cWelcome to Th3ryks Portfolio!', 'color: #00d4ff; font-size: 20px; font-weight: bold;');
     console.log('%c🎮 Try the Konami Code: ↑↑↓↓←→←→BA', 'color: #ff6b9d; font-size: 14px;');
-    console.log('%c🎵 Click the music button in the top-left corner!', 'color: #c471ed; font-size: 14px;');
     console.log('%c✨ Click around to see particle effects!', 'color: #00d4ff; font-size: 14px;');
 });
