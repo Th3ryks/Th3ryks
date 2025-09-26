@@ -1,5 +1,6 @@
 // Copy protection and security measures
 document.addEventListener('DOMContentLoaded', function() {
+    /* --- SECURITY AND PROTECTION --- */
     // Disable right-click context menu
     document.addEventListener('contextmenu', function(e) {
         e.preventDefault();
@@ -59,6 +60,240 @@ document.addEventListener('DOMContentLoaded', function() {
             return false;
         }
     });
+
+    /* --- INTERACTIVE ELEMENTS --- */
+    // Cursor trail effect
+    let cursorTrail = document.getElementById('cursor-trail');
+    let mouseX = 0;
+    let mouseY = 0;
+    let trailX = 0;
+    let trailY = 0;
+
+    document.addEventListener('mousemove', function(e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+
+    function animateTrail() {
+        trailX += (mouseX - trailX) * 0.1;
+        trailY += (mouseY - trailY) * 0.1;
+        
+        if (cursorTrail) {
+            cursorTrail.style.left = trailX - 10 + 'px';
+            cursorTrail.style.top = trailY - 10 + 'px';
+        }
+        
+        requestAnimationFrame(animateTrail);
+    }
+
+    animateTrail();
+
+    // Interactive particles on click
+    document.addEventListener('click', function(e) {
+        createClickEffect(e.clientX, e.clientY);
+    });
+
+    function createClickEffect(x, y) {
+        for (let i = 0; i < 6; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'click-particle';
+            particle.style.cssText = `
+                position: fixed;
+                left: ${x}px;
+                top: ${y}px;
+                width: 4px;
+                height: 4px;
+                background: #00d4ff;
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 10000;
+                animation: particleFloat 1s ease-out forwards;
+            `;
+            particle.style.setProperty('--random-x', (Math.random() - 0.5) * 100 + 'px');
+            particle.style.setProperty('--random-y', (Math.random() - 0.5) * 100 + 'px');
+            document.body.appendChild(particle);
+            
+            setTimeout(() => {
+                if (particle.parentNode) {
+                    particle.remove();
+                }
+            }, 1000);
+        }
+    }
+
+    // Button pulse effect on hover
+    document.querySelectorAll('.glass-button').forEach(button => {
+        button.addEventListener('mouseenter', function() {
+            this.style.animation = 'pulse 0.6s ease-in-out';
+        });
+        
+        button.addEventListener('mouseleave', function() {
+            this.style.animation = '';
+        });
+    });
+
+    /* --- BACKGROUND MUSIC --- */
+    let backgroundMusic = null;
+    let isMusicPlaying = false;
+
+    // Create music toggle button
+    function createMusicToggle() {
+        const musicToggle = document.createElement('div');
+        musicToggle.id = 'music-toggle';
+        musicToggle.innerHTML = '🎵';
+        musicToggle.title = 'Toggle Background Music';
+        musicToggle.style.cssText = `
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 20px;
+            z-index: 1000;
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        `;
+        document.body.appendChild(musicToggle);
+        
+        musicToggle.addEventListener('click', toggleMusic);
+        musicToggle.addEventListener('mouseenter', function() {
+            this.style.opacity = '1';
+            this.style.transform = 'scale(1.1)';
+        });
+        musicToggle.addEventListener('mouseleave', function() {
+            this.style.opacity = isMusicPlaying ? '1' : '0.6';
+            this.style.transform = 'scale(1)';
+        });
+    }
+
+    function toggleMusic() {
+        const toggle = document.getElementById('music-toggle');
+        
+        if (!backgroundMusic) {
+            // Create audio element with a placeholder URL (would need actual audio file)
+            backgroundMusic = new Audio();
+            backgroundMusic.loop = true;
+            backgroundMusic.volume = 0.3;
+        }
+        
+        if (isMusicPlaying) {
+            backgroundMusic.pause();
+            toggle.innerHTML = '🎵';
+            toggle.style.opacity = '0.6';
+            isMusicPlaying = false;
+        } else {
+            backgroundMusic.play().catch(e => {
+                console.log('Audio playback failed:', e);
+                showNotification('Audio not available');
+            });
+            toggle.innerHTML = '🔊';
+            toggle.style.opacity = '1';
+            isMusicPlaying = true;
+        }
+    }
+
+    /* --- EASTER EGGS --- */
+    let konamiCode = [];
+    const konamiSequence = [
+        'ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown',
+        'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight',
+        'KeyB', 'KeyA'
+    ];
+
+    document.addEventListener('keydown', function(e) {
+        // Don't interfere with existing security measures
+        if (!e.ctrlKey && !e.shiftKey && e.keyCode !== 123) {
+            konamiCode.push(e.code);
+            
+            if (konamiCode.length > konamiSequence.length) {
+                konamiCode.shift();
+            }
+            
+            if (konamiCode.join(',') === konamiSequence.join(',')) {
+                activateKonamiEasterEgg();
+                konamiCode = [];
+            }
+        }
+    });
+
+    function activateKonamiEasterEgg() {
+        // Rainbow effect on the entire page
+        document.body.style.animation = 'rainbow 2s ease-in-out';
+        
+        // Show secret message
+        const secretMessage = document.createElement('div');
+        secretMessage.innerHTML = '🎉 Konami Code Activated! 🎉<br>You found the secret!';
+        secretMessage.style.cssText = `
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.9);
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            z-index: 10000;
+            font-size: 1.2rem;
+            animation: bounce 1s ease-in-out;
+        `;
+        
+        document.body.appendChild(secretMessage);
+        
+        setTimeout(() => {
+            if (secretMessage.parentNode) {
+                secretMessage.remove();
+            }
+            document.body.style.animation = '';
+        }, 3000);
+    }
+
+    // Click counter easter egg
+    let clickCount = 0;
+    document.addEventListener('click', function() {
+        clickCount++;
+        
+        if (clickCount === 50) {
+            showClickEasterEgg();
+        }
+    });
+
+    function showClickEasterEgg() {
+        const easterEgg = document.createElement('div');
+        easterEgg.innerHTML = '🎪 Wow! 50 clicks! You\'re really exploring! 🎪';
+        easterEgg.style.cssText = `
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(45deg, #ff6b9d, #c471ed);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            z-index: 10000;
+            animation: slideInRight 0.5s ease-out;
+        `;
+        
+        document.body.appendChild(easterEgg);
+        
+        setTimeout(() => {
+            easterEgg.style.animation = 'slideOutRight 0.5s ease-in';
+            setTimeout(() => {
+                if (easterEgg.parentNode) {
+                    easterEgg.remove();
+                }
+            }, 500);
+        }, 3000);
+    }
+
+    // Initialize music toggle
+    createMusicToggle();
 
     // Disable text selection with mouse
     document.onselectstart = function() {
@@ -271,13 +506,52 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 3000);
     }
 
-    // Add shake animation to CSS dynamically
+    // Add animations to CSS dynamically
     const style = document.createElement('style');
     style.textContent = `
         @keyframes shake {
             0%, 100% { transform: translateX(0); }
             10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
             20%, 40%, 60%, 80% { transform: translateX(5px); }
+        }
+        
+        @keyframes particleFloat {
+            0% {
+                opacity: 1;
+                transform: translate(0, 0) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(var(--random-x), var(--random-y)) scale(0);
+            }
+        }
+        
+        @keyframes rainbow {
+            0% { filter: hue-rotate(0deg); }
+            50% { filter: hue-rotate(180deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translate(-50%, -50%) translateY(0); }
+            40% { transform: translate(-50%, -50%) translateY(-10px); }
+            60% { transform: translate(-50%, -50%) translateY(-5px); }
+        }
+        
+        @keyframes slideInRight {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes slideOutRight {
+            from { transform: translateX(0); opacity: 1; }
+            to { transform: translateX(100%); opacity: 0; }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
     `;
     document.head.appendChild(style);
@@ -309,7 +583,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }, { passive: false });
 
-    // Console warning
+    // Console welcome message
     console.clear();
     console.log('%cWelcome to Th3ryks Portfolio!', 'color: #00d4ff; font-size: 20px; font-weight: bold;');
+    console.log('%c🎮 Try the Konami Code: ↑↑↓↓←→←→BA', 'color: #ff6b9d; font-size: 14px;');
+    console.log('%c🎵 Click the music button in the top-left corner!', 'color: #c471ed; font-size: 14px;');
+    console.log('%c✨ Click around to see particle effects!', 'color: #00d4ff; font-size: 14px;');
 });
