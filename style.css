@@ -250,6 +250,8 @@ body::before {
     min-height: 100vh;
     padding: 20px;
     position: relative;
+    max-width: 100vw;
+    margin: 0 auto;
 }
 
 /* Loading animations */
@@ -341,10 +343,162 @@ body::before {
 
 .main-card {
     text-align: center;
-    max-width: 500px;
+    max-width: 600px;
     width: 100%;
 }
 
+/* Large screens adaptation */
+@media (min-width: 1200px) {
+    .main-card {
+        max-width: 700px;
+    }
+    
+    .username {
+        font-size: 4rem;
+    }
+    
+    .glass-button {
+        padding: 20px 28px;
+        font-size: 1.1rem;
+    }
+    
+    .icon {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .main-card {
+        max-width: 800px;
+    }
+    
+    .username {
+        font-size: 4.5rem;
+    }
+    
+    .glass-card {
+        padding: 50px;
+    }
+    
+    .glass-button {
+        padding: 22px 32px;
+        font-size: 1.2rem;
+    }
+    
+    .icon {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+@media (min-width: 2560px) {
+    .main-card {
+        max-width: 1000px;
+    }
+    
+    .username {
+        font-size: 5.5rem;
+        margin-bottom: 50px;
+    }
+    
+    .glass-card {
+        padding: 60px;
+    }
+    
+    .buttons-grid {
+        gap: 30px;
+        margin-top: 40px;
+    }
+    
+    .glass-button {
+        padding: 26px 36px;
+        font-size: 1.3rem;
+        border-radius: 20px;
+    }
+    
+    .icon {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+ @media (min-width: 3840px) {
+     .container {
+         max-width: 3840px;
+         padding: 40px;
+     }
+     
+     .main-card {
+         max-width: 1200px;
+     }
+     
+     .username {
+         font-size: 6.5rem;
+         margin-bottom: 60px;
+     }
+     
+     .glass-card {
+         padding: 80px;
+         border-radius: 32px;
+     }
+     
+     .buttons-grid {
+         gap: 40px;
+         margin-top: 50px;
+     }
+     
+     .glass-button {
+         padding: 30px 40px;
+         font-size: 1.4rem;
+         border-radius: 24px;
+         min-height: 80px;
+     }
+     
+     .icon {
+         width: 40px;
+         height: 40px;
+     }
+ }
+
+ @media (min-width: 5120px) {
+     .container {
+         max-width: 5120px;
+         padding: 60px;
+     }
+     
+     .main-card {
+         max-width: 1400px;
+     }
+     
+     .username {
+         font-size: 8rem;
+         margin-bottom: 80px;
+     }
+     
+     .glass-card {
+         padding: 100px;
+         border-radius: 40px;
+     }
+     
+     .buttons-grid {
+         gap: 50px;
+         margin-top: 60px;
+     }
+     
+     .glass-button {
+         padding: 35px 45px;
+         font-size: 1.6rem;
+         border-radius: 28px;
+         min-height: 90px;
+     }
+     
+     .icon {
+         width: 44px;
+         height: 44px;
+     }
+ }
+ 
 .main-card:hover {
     transform: translateY(-5px);
     box-shadow: 

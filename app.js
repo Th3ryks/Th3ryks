@@ -505,6 +505,5 @@ document.addEventListener('DOMContentLoaded', function() {
     // Console welcome message
     console.clear();
     console.log('%cWelcome to Th3ryks Portfolio!', 'color: #00d4ff; font-size: 20px; font-weight: bold;');
-    console.log('%c🎮 Try the Konami Code: ↑↑↓↓←→←→BA', 'color: #ff6b9d; font-size: 14px;');
     console.log('%c✨ Click around to see particle effects!', 'color: #00d4ff; font-size: 14px;');
 });
