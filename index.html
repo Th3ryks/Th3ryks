@@ -40,7 +40,7 @@
                     <span>Telegram</span>
                 </a>
                 
-                <a href="https://x.com/TVysocin" target="_blank" class="glass-button" id="twitter-btn">
+                <a href="https://x.com/Th3ryks" target="_blank" class="glass-button" id="twitter-btn">
                     <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/>
                     </svg>
@@ -52,20 +52,29 @@
                         <path d="M28 56C43.464 56 56 43.464 56 28C56 12.536 43.464 0 28 0C12.536 0 0 12.536 0 28C0 43.464 12.536 56 28 56Z" fill="white"></path>
                         <path d="M37.5603 15.6277H18.4386C14.9228 15.6277 12.6944 19.4202 14.4632 22.4861L26.2644 42.9409C27.0345 44.2765 28.9644 44.2765 29.7345 42.9409L41.5381 22.4861C43.3045 19.4251 41.0761 15.6277 37.5627 15.6277H37.5603ZM26.2548 36.8068L23.6847 31.8327L17.4833 20.7414C17.0742 20.0315 17.5795 19.1218 18.4362 19.1218H26.2524V36.8092L26.2548 36.8068ZM38.5108 20.739L32.3118 31.8351L29.7417 36.8068V19.1194H37.5579C38.4146 19.1194 38.9199 20.0291 38.5108 20.739Z" fill="#888888"></path>
                     </svg>
-                    <span>TON Donation</span>
+                    <span>Donate</span>
                 </div>
             </div>
         </div>
         
         <div class="donation-modal" id="donation-modal">
             <div class="glass-card modal-content">
-                <h3>TON Donation</h3>
-                <div class="custom-input-container">
-                    <input type="text" class="custom-input" id="amount-input" placeholder="Enter amount in TON" inputmode="decimal">
+                <h3>Donate</h3>
+                <div class="donation-amounts">
+                    <div class="amount-row">
+                        <button class="amount-btn" data-amount="0.5">0.5 TON</button>
+                        <button class="amount-btn" data-amount="1">1 TON</button>
+                        <button class="amount-btn" data-amount="3">3 TON</button>
+                    </div>
+                    <div class="amount-row">
+                        <button class="amount-btn" data-amount="5">5 TON</button>
+                        <button class="amount-btn" data-amount="10">10 TON</button>
+                        <button class="amount-btn" data-amount="100">100 TON</button>
+                    </div>
                 </div>
                 <div class="modal-buttons">
                     <button class="glass-button secondary" id="cancel-btn">Cancel</button>
-                    <button class="glass-button primary" id="donate-btn">Donate</button>
+                    <button class="glass-button primary" id="donate-btn" disabled>Donate</button>
                 </div>
             </div>
         </div>
