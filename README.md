@@ -35,7 +35,7 @@ I'm a **Python Developer** and student from Warsaw 🇵🇱, passionate about cr
 ![Th3ryks's GitHub stats](https://github-readme-stats.vercel.app/api?username=Th3ryks&show_icons=true&theme=dark)
 
 ## 🤝 Connect with Me
-- 💬 **Telegram**: @Th3ryks
+- 💬 **Telegram**: [@Th3ryks](https://t.me/Th3ryks)
 - 🌐 **Portfolio**: [My Website](https://th3ryks.dev)
 
 ---
