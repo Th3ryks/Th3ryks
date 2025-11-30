@@ -29,10 +29,6 @@ I'm a **Python Developer** and student from Warsaw 🇵🇱, passionate about cr
 - 🌐 **Web Development** - from idea to finished product
 - 🔐 **Cybersecurity** - studying information security fundamentals
 - 💰 **Cryptocurrencies** - interested in blockchain technologies
-- 🎮 **Game Development** - experimenting with Pygame
-
-## 📊 GitHub Stats
-![Th3ryks's GitHub stats](https://github-readme-stats.vercel.app/api?username=Th3ryks&show_icons=true&theme=dark)
 
 ## 🤝 Connect with Me
 - 💬 **Telegram**: [@Th3ryks](https://t.me/Th3ryks)
